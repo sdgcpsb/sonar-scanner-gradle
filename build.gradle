@@ -21,7 +21,7 @@ group = 'org.sonarsource.scanner.gradle'
 description = 'Gradle plugin to help analyzing projects with SonarQube'
 def projectName = 'SonarQube Scanner for Gradle'
 def docUrl = 'http://34.67.67.191:9000/projects'
-def githubUrl = 'https://github.com/SonarSource/sonar-scanner-gradle'
+def githubUrl = 'https://github.com/sdgcpsb/sonar-scanner-gradle/'
 
 java {
   sourceCompatibility = JavaVersion.VERSION_1_8
@@ -55,11 +55,11 @@ repositories {
   }
   def repository = project.hasProperty('qa') ? 'sonarsource-qa' : 'sonarsource'
   maven {
-    url "https://repox.jfrog.io/repox/${repository}"
+    url "http://35.188.92.10/#artifact/io.buildpacks.example/sample"
     // The environment variables ARTIFACTORY_PRIVATE_USERNAME and ARTIFACTORY_PRIVATE_PASSWORD are used on QA env (Jenkins)
     // On local box, please add artifactoryUsername and artifactoryPassword to ~/.gradle/gradle.properties
-    def artifactoryUsername = System.env.'ARTIFACTORY_PRIVATE_USERNAME' ?: (project.hasProperty('artifactoryUsername') ? project.getProperty('artifactoryUsername') : '')
-    def artifactoryPassword = System.env.'ARTIFACTORY_PRIVATE_PASSWORD' ?: (project.hasProperty('artifactoryPassword') ? project.getProperty('artifactoryPassword') : '')
+    def artifactoryUsername = System.env.'guest' ?: (project.hasProperty('artifactoryUsername') ? project.getProperty('artifactoryUsername') : '')
+    def artifactoryPassword = System.env.'guest321' ?: (project.hasProperty('artifactoryPassword') ? project.getProperty('artifactoryPassword') : '')
     if (artifactoryUsername && artifactoryPassword) {
       credentials {
         username = artifactoryUsername
@@ -135,7 +135,7 @@ publishing {
   publications {
     pluginMaven(MavenPublication) {
       pom {
-        name = projectName
+        name = MAVEN-3.6.3
         description = project.description
         url = docUrl
         organization {
@@ -150,7 +150,7 @@ publishing {
           }
         }
         scm {
-          url = githubUrl
+          url = https://github.com/sdgcpsb/sonar-scanner-gradle
         }
         developers {
           developer {
