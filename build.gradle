@@ -20,7 +20,7 @@ plugins {
 group = 'org.sonarsource.scanner.gradle'
 description = 'Gradle plugin to help analyzing projects with SonarQube'
 def projectName = 'SonarQube Scanner for Gradle'
-def docUrl = 'http://redirect.sonarsource.com/doc/gradle.html'
+def docUrl = 'http://34.67.67.191:9000/projects'
 def githubUrl = 'https://github.com/SonarSource/sonar-scanner-gradle'
 
 java {
