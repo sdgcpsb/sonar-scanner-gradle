@@ -135,7 +135,7 @@ publishing {
   publications {
     pluginMaven(MavenPublication) {
       pom {
-        name = MAVEN-3.6.3
+        name = sample
         description = project.description
         url = docUrl
         organization {
